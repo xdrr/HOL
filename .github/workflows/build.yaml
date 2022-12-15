@@ -8,7 +8,7 @@ jobs:
       - name: Checkout HOL
         uses: actions/checkout@v3
         with:
-          repository: https://github.com/hol-Theorem-Prover/HOL/
+          repository: hol-Theorem-Prover/HOL
           path: HOL
       - name: Checkout PolyML
         uses: actions/checkout@v3
