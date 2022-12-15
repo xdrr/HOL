@@ -24,6 +24,6 @@ jobs:
       - name: Build HOL
         run: |
           echo $PWD
-          polyml/poly < tools/smart-configure.sml
+          polyml/poly < HOL/tools/smart-configure.sml
           LD_LIBRARY_PATH=$LD_LIBRARY_PATH:polyml/libpolyml/.libs:polyml/libpolymain/.libs \
             bin/build
