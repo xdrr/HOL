@@ -5,7 +5,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout HOL
+        uses: actions/checkout@v3
+        with:
+          repository: https://github.com/hol-Theorem-Prover/HOL/
+          path: HOL
       - name: Checkout PolyML
         uses: actions/checkout@v3
         with:
@@ -19,5 +23,6 @@ jobs:
           make
       - name: Build HOL
         run: |
+          polyml/poly < tools/smart-configure.sml
           LD_LIBRARY_PATH=$LD_LIBRARY_PATH:polyml/libpolyml/.libs:polyml/libpolymain/.libs \
-            $HOME/work/HOL/HOL/bin/build
+            bin/build
