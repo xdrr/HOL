@@ -17,8 +17,7 @@ jobs:
           cd polyml
           ./configure
           make
-          make install
       - name: Build HOL
         run: |
-          cd HOL
-          bin/build
+          LD_LIBRARY_PATH=$LD_LIBRARY_PATH:polyml/libpolyml/.libs:polyml/libpolymain/.libs \
+            HOL/bin/build
