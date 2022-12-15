@@ -1,8 +1,6 @@
 name: HOL4 CI
 run-name: ${{ github.actor }} build
-on:
-  push:
-    branches: [ 'devel' ]
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
