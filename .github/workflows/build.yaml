@@ -1,0 +1,26 @@
+name: HOL4 CI
+run-name: ${{ github.actor }} build
+on:
+  push:
+    branches: [ 'devel' ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Checkout PolyML
+        uses: actions/checkout@v3
+        with:
+          repository: polyml/polyml
+          path: polyml
+          ref: v5.9
+      - name: Build PolyML
+        run: |
+          cd polyml
+          ./configure
+          make
+          make install
+      - name: Build HOL
+        run: |
+          cd HOL
+          bin/build
