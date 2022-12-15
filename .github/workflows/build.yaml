@@ -21,6 +21,7 @@ jobs:
           cd polyml
           ./configure
           make
+          sudo make install
       - name: Build HOL
         run: |
           cd HOL
